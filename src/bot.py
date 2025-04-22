@@ -81,7 +81,8 @@ def handle_document(message, accion):
         with open(convertido, 'rb') as documento:
             bot.send_chat_action(message.chat.id, 'upload_document')
             bot.send_document(message.chat.id, documento)
-        remove()
+        os.remove(full_path)
+        os.remove(convertido)
         user_states={}  # Limpiar el estado del usuario después de la conversión
     except Exception as e:
         msg = bot.reply_to(message, f"Error al descargar el archivo: {e}. Por favor, intenta nuevamente y asegurate de que el archivo sea correcto.")
