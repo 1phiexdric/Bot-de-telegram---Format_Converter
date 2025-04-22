@@ -1,7 +1,6 @@
 import os
 import time
 import telebot as tb
-from utils import *
 from mensajes import *
 from pdf_converter import convert_to_docx, convert_to_pdf, convertir_ppt_to_pdf_linux
 #botenes inline
